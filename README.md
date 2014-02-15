@@ -114,24 +114,7 @@ Go check out the download link for the SDK at https://developer.getpebble.com/2/
 
 Also make sure the Pebble ARM toolkit URL on the same page matches the one in the toolchain_url in the same attributes file.
 
-The recipe doesn't actually work in a fully automated way because Pebble doesn't provide a sane download link, instead they require you to log in to download. This sort of kills the ability to automatically download stuff.
-
-Until they fix their shit, you will have to manually download and throw the SDK in the VM.
-
-So when you run ```vagrant up``` and end up with an error, go to [https://developer.getpebble.com/2/getting-started/](https://developer.getpebble.com/2/getting-started/), download the Pebble SDK and upload the .tar.gz file on the virtual machine using SCP.
-
-E.g.:
-```
-scp PebbleSDK.2.0.0.tar.gz vagrant@127.0.0.1:2222
-```
-
-.. you can check the correct SSH settings (mainly port) with "vagrant ssh-config" while in the repository checkout.
-
-Windows users might want to use e.g. WinSCP for this:
- * [http://winscp.net/eng/index.php](http://winscp.net/eng/index.php)
-
-
-After you have uploaded the file, tell Vagrant to retry configuring the system.
+After you have fixed stuff, tell Vagrant to retry configuring the system.
 
 ```
 vagrant provision
